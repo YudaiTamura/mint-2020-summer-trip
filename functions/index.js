@@ -8,7 +8,7 @@ const app = express();
 app.all(
   "/*",
   basicAuth(function (user, password) {
-    return user === "hoge" && password === "hogehoge";
+    return user === `${functions.config().basicauth.user}` && password === `${functions.config().basicauth.password}`;
   })
 );
 
