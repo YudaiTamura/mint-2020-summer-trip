@@ -25,7 +25,6 @@ jobs:
           npm run build
           cd ./functions
           npm install
-          npm run build
           cd ..
       - name: deploy to Firebase Hosting
         uses: w9jds/firebase-action@master
