@@ -1,0 +1,16 @@
+const COLOR = {
+  BASE: "#F7F1EA",
+  BROWN: "#75552F",
+  DARK_BROWN: "#262320",
+  BIEGE: "#B88979",
+  OLIVE: "#737311",
+  PALE_BLUE: "#9BD5FE",
+  TURQUOISE: "#69B8B3",
+  VIOLET: "#222B45",
+  GRAY_BLUE: "#7989A5",
+  WHITE: "#FFFFFF",
+};
+
+export default {
+  COLOR,
+};
