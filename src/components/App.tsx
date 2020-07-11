@@ -1,21 +1,25 @@
 import React from "react";
 import { Reset } from "styled-reset";
-import CSS from "csstype";
+import styled from "styled-components";
 
+import TopPage from "./TopPage";
 import Footer from "./Footer";
 import Variables from "./Variables";
 
-const App = () => {
-  const minHeight: CSS.Properties = {
-    minHeight: "756px",
-    backgroundColor: Variables.COLOR.BASE,
-  };
+const MainContents = styled.main`
+  /* 画面の高さ - footerの高さ */
+  min-height: calc(100vh - 40px);
+  width: 100vw;
+  background-color: ${Variables.COLOR.BASE};
+`;
 
+const App = () => {
   return (
     <>
       <Reset />
-      <h1>Hello, React!</h1>
-      <h2 style={minHeight}>github actionsテスト</h2>
+      <MainContents>
+        <TopPage />
+      </MainContents>
       <Footer />
     </>
   );
