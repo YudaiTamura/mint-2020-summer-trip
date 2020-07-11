@@ -11,6 +11,9 @@ const COLOR = {
   WHITE: "#FFFFFF",
 };
 
+const FOOTER_HEIGHT = "40px";
+
 export default {
   COLOR,
+  FOOTER_HEIGHT,
 };

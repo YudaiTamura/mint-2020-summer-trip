@@ -9,7 +9,7 @@ import Variables from "./components/Variables";
 
 const MainContents = styled.main`
   /* 画面の高さ - footerの高さ */
-  min-height: calc(100vh - 40px);
+  min-height: calc(100vh - ${Variables.FOOTER_HEIGHT});
   width: 100vw;
   background-color: ${Variables.COLOR.BASE};
 `;
