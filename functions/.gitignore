@@ -1,5 +1,4 @@
 node_modules/
 dist/*
-!dist/index.html
-!dist/favicon.ico
-!dist/apple-touch-icon.png
+!dist/*.html
+!dist/images
