@@ -16,9 +16,9 @@ const FooterItem = styled.p`
 
 const Footer = () => {
   return (
-    <div>
+    <footer>
       <FooterItem>©︎ Yudai Tamura FROM MINT</FooterItem>
-    </div>
+    </footer>
   );
 };
 
