@@ -1,14 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Reset } from "styled-reset";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 import TopPage from "./components/TopPage";
 import Footer from "./components/Footer";
 import Variables from "./components/Variables";
 
+const AdditionalResetStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+`;
+
 const MainContents = styled.main`
-  /* 画面の高さ - footerの高さ */
   min-height: calc(100vh - ${Variables.FOOTER_HEIGHT});
   width: 100vw;
   background-color: ${Variables.COLOR.BASE};
@@ -17,6 +24,7 @@ const MainContents = styled.main`
 ReactDOM.render(
   <>
     <Reset />
+    <AdditionalResetStyle />
     <MainContents>
       <TopPage />
     </MainContents>

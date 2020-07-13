@@ -27,7 +27,6 @@ const Link = styled.a`
   border-radius: 20%;
   line-height: calc((90vw - 5rem) / 2);
   text-align: center;
-  text-decoration: none;
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
   font-family: serif;
