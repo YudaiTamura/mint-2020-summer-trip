@@ -27,8 +27,8 @@ ReactDOM.render(
     <AdditionalResetStyle />
     <MainContents>
       <TopPage />
+      <Footer />
     </MainContents>
-    <Footer />
   </>,
   document.getElementById("root")
 );
