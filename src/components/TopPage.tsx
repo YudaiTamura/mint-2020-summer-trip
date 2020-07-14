@@ -1,7 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import himejijoImg from "../images/himejijo1.jpg";
+import arimaImg from "../images/arima.jpg";
+import ikutajinja from "../images/ikutajinja.jpg";
+import merikenpark from "../images/merikenpark.jpg";
+import nada from "../images/nada.jpg";
+import rokkousan from "../images/rokkosan.jpg";
+import sannomiya from "../images/sannomiya.jpg";
+import shinrinshokubutsuen from "../images/shinrinshokubutsuen.jpg";
 
 import Variables from "./Variables";
 
@@ -51,10 +61,27 @@ const Link = styled.a`
 `;
 
 const TopPage = () => {
+  const slickSetting = {
+    fade: true,
+    arrows: false,
+    infinite: true,
+    speed: 2000,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const keyVisualImgs = [himejijoImg, arimaImg, ikutajinja, merikenpark, nada, rokkousan, sannomiya, shinrinshokubutsuen];
+
   return (
     <section className="top-page">
       <KeyVisualContainer>
-        <KeyVisual src={himejijoImg} />
+        <Slider {...slickSetting}>
+          {keyVisualImgs.map((img, index) => (
+            <KeyVisual src={img} key={index} />
+          ))}
+        </Slider>
       </KeyVisualContainer>
       <Links>
         <Link href="./schedule">日程</Link>
