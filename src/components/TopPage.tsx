@@ -5,8 +5,24 @@ import himejijoImg from "../images/himejijo1.jpg";
 
 import Variables from "./Variables";
 
+const KeyVisualContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.2);
+  }
+`;
+
 const KeyVisual = styled.img`
   width: 100%;
+  height: 100vh;
+  object-fit: cover;
 `;
 
 const Links = styled.div`
@@ -37,7 +53,9 @@ const Link = styled.a`
 const TopPage = () => {
   return (
     <section className="top-page">
-      <KeyVisual src={himejijoImg} />
+      <KeyVisualContainer>
+        <KeyVisual src={himejijoImg} />
+      </KeyVisualContainer>
       <Links>
         <Link href="./schedule">日程</Link>
         <Link href="./stay">宿泊先</Link>
