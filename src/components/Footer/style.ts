@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 
-import Variables from "./Variables";
+import Variables from "../Variables";
 
-const FooterItem = styled.p`
+export const FooterItem = styled.p`
   height: ${Variables.FOOTER_HEIGHT};
   width: 100%;
   line-height: ${Variables.FOOTER_HEIGHT};
@@ -13,13 +12,3 @@ const FooterItem = styled.p`
   background-color: ${Variables.COLOR.OLIVE};
   color: ${Variables.COLOR.WHITE};
 `;
-
-const Footer = () => {
-  return (
-    <footer>
-      <FooterItem>©︎ Yudai Tamura FROM MINT</FooterItem>
-    </footer>
-  );
-};
-
-export default Footer;
