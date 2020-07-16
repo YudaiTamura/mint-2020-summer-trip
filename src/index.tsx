@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Reset } from "styled-reset";
 import styled, { createGlobalStyle } from "styled-components";
 
 import TopPage from "./components/TopPage";
+import Himejijo from "./components/Himejijo";
 import Footer from "./components/Footer";
 import Variables from "./components/Variables";
 
@@ -26,7 +28,12 @@ ReactDOM.render(
     <Reset />
     <AdditionalResetStyle />
     <MainContents>
-      <TopPage />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={TopPage}></Route>
+          <Route exact path="/himejijo" component={Himejijo}></Route>
+        </Switch>
+      </BrowserRouter>
       <Footer />
     </MainContents>
   </>,

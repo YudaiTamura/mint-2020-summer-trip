@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Variables from "../Variables";
 
@@ -31,7 +32,7 @@ export const Links = styled.div`
   justify-content: space-around;
 `;
 
-export const Link = styled.a`
+export const StyledLink = styled(Link)`
   display: block;
   width: calc((90vw - 5rem) / 2);
   height: calc((90vw - 5rem) / 2);

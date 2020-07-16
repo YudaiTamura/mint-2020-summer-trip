@@ -9,7 +9,7 @@ import himejijoImg from "../../images/himejijo.jpg";
 import arimaImg from "../../images/arima.jpg";
 import merikenparkImg from "../../images/merikenpark.jpg";
 
-import { KeyVisualContainer, KeyVisual, Links, Link } from "./style";
+import { KeyVisualContainer, KeyVisual, Links, StyledLink } from "./style";
 
 const TopPage = () => {
   const slickSetting = {
@@ -37,8 +37,7 @@ const TopPage = () => {
         </Slider>
       </KeyVisualContainer>
       <Links>
-        <Link href="./schedule">日程</Link>
-        <Link href="./stay">宿泊先</Link>
+        <StyledLink to={"/himejijo"}>姫路城</StyledLink>
       </Links>
     </section>
   );
