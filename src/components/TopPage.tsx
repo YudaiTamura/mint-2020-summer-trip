@@ -1,17 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
+import LazyLoad from "react-lazyload";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import himejijoImg from "../images/himejijo1.jpg";
+import himejijoImg from "../images/himejijo.jpg";
 import arimaImg from "../images/arima.jpg";
-import ikutajinja from "../images/ikutajinja.jpg";
-import merikenpark from "../images/merikenpark.jpg";
-import nada from "../images/nada.jpg";
-import rokkousan from "../images/rokkosan.jpg";
-import sannomiya from "../images/sannomiya.jpg";
-import shinrinshokubutsuen from "../images/shinrinshokubutsuen.jpg";
+import merikenparkImg from "../images/merikenpark.jpg";
 
 import Variables from "./Variables";
 
@@ -72,14 +69,16 @@ const TopPage = () => {
     slidesToScroll: 1,
   };
 
-  const keyVisualImgs = [himejijoImg, arimaImg, ikutajinja, merikenpark, nada, rokkousan, sannomiya, shinrinshokubutsuen];
+  const keyVisualImgs = [himejijoImg, arimaImg, merikenparkImg];
 
   return (
     <section className="top-page">
       <KeyVisualContainer>
         <Slider {...slickSetting}>
           {keyVisualImgs.map((img, index) => (
-            <KeyVisual src={img} key={index} />
+            <LazyLoad height={200}>
+              <KeyVisual src={img} key={index} />
+            </LazyLoad>
           ))}
         </Slider>
       </KeyVisualContainer>
