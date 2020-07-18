@@ -14,6 +14,10 @@ const AdditionalResetStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     text-decoration: none;
+    border: none;
+  }
+  button:focus {
+    outline:0;
   }
 `;
 

@@ -11,7 +11,7 @@ import merikenparkImg from "../../images/merikenpark.jpg";
 
 import Schedules from "../Schedules";
 
-import { KeyVisualContainer, KeyVisual, Links, StyledLink } from "./style";
+import { KeyVisualContainer, KeyVisual, ScheduleContainer, ScheduleTitle, Day1Button, Day2Button, Day3Button, ScheduleEvents, ScheduleEvent, StyledLink, EventTime, EventTitle } from "./style";
 
 const TopPage = () => {
   const slickSetting = {
@@ -27,10 +27,20 @@ const TopPage = () => {
 
   const keyVisualImgs = [himejijoImg, arimaImg, merikenparkImg];
 
+  const [selectedDay, setSelectedDay] = useState("day1");
   const [schedule, setSchedule] = useState(Schedules.day1Schedule);
-  const showDay1Schedule = () => setSchedule(Schedules.day1Schedule);
-  const showDay2Schedule = () => setSchedule(Schedules.day2Schedule);
-  const showDay3Schedule = () => setSchedule(Schedules.day3Schedule);
+  const showDay1Schedule = () => {
+    setSelectedDay("day1");
+    setSchedule(Schedules.day1Schedule);
+  };
+  const showDay2Schedule = () => {
+    setSelectedDay("day2");
+    setSchedule(Schedules.day2Schedule);
+  };
+  const showDay3Schedule = () => {
+    setSelectedDay("day3");
+    setSchedule(Schedules.day3Schedule);
+  };
 
   return (
     <section className="top-page">
@@ -43,22 +53,28 @@ const TopPage = () => {
           ))}
         </Slider>
       </KeyVisualContainer>
-      <Links>
-        <h2>日程</h2>
-        <button onClick={showDay1Schedule}>１日目</button>
-        <button onClick={showDay2Schedule}>２日目</button>
-        <button onClick={showDay3Schedule}>３日目</button>
-        <ul>
+      <ScheduleContainer>
+        <ScheduleTitle>日程</ScheduleTitle>
+        <Day1Button onClick={showDay1Schedule} aria-selected={selectedDay === "day1"}>
+          １日目
+        </Day1Button>
+        <Day2Button onClick={showDay2Schedule} aria-selected={selectedDay === "day2"}>
+          ２日目
+        </Day2Button>
+        <Day3Button onClick={showDay3Schedule} aria-selected={selectedDay === "day3"}>
+          ３日目
+        </Day3Button>
+        <ScheduleEvents>
           {schedule.map((event: { time: string; name: string; link: string }, index: number) => (
-            <li key={index}>
+            <ScheduleEvent key={index}>
               <StyledLink to={event.link}>
-                <time>{event.time}</time>
-                <h3>{event.name}</h3>
+                <EventTime>{event.time}</EventTime>
+                <EventTitle>{event.name}</EventTitle>
               </StyledLink>
-            </li>
+            </ScheduleEvent>
           ))}
-        </ul>
-      </Links>
+        </ScheduleEvents>
+      </ScheduleContainer>
     </section>
   );
 };
