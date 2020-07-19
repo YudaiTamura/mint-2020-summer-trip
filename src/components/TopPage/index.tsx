@@ -13,7 +13,7 @@ import Schedules from "../Schedules";
 
 import { KeyVisualContainer, KeyVisual, ScheduleContainer, ScheduleTitle, Day1Button, Day2Button, Day3Button, ScheduleEvents, ScheduleEvent, StyledLink, EventTime, EventTitle } from "./style";
 
-const TopPage = () => {
+const TopPage: React.FC = () => {
   const slickSetting = {
     fade: true,
     arrows: false,
