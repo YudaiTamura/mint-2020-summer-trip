@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Variables from "../Variables";
+import Variables from '../Variables';
 
 export const FooterItem = styled.p`
   height: ${Variables.FOOTER_HEIGHT};

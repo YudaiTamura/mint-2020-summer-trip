@@ -1,13 +1,13 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import Variables from "../Variables";
+import Variables from '../Variables';
 
 export const KeyVisualContainer = styled.div`
   width: 100vw;
   height: 100vh;
   &::after {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
@@ -28,12 +28,12 @@ export const ScheduleContainer = styled.div`
   padding: 0 5%;
   display: grid;
   grid-template:
-    "..... ..... ....." 4rem
-    "title title title"
-    "..... ..... ....." 1rem
-    "day1  day2  day3 " 4rem
-    "body  body  body "
-    "..... ..... ....." 4rem
+    '..... ..... .....' 4rem
+    'title title title'
+    '..... ..... .....' 1rem
+    'day1  day2  day3 ' 4rem
+    'body  body  body '
+    '..... ..... .....' 4rem
     / 1fr 1fr 1fr;
 `;
 
@@ -52,7 +52,7 @@ const ScheduleDayButton = styled.button`
   letter-spacing: 0.1rem;
   font-family: serif;
   border-radius: 16px 16px 0 0;
-  &[aria-selected="true"] {
+  &[aria-selected='true'] {
     color: ${Variables.COLOR.BROWN};
     background-color: ${Variables.COLOR.BASE};
   }
