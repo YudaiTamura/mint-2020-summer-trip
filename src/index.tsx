@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Reset } from "styled-reset";
-import styled, { createGlobalStyle } from "styled-components";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Reset } from 'styled-reset';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import TopPage from "./components/TopPage";
-import Himejijo from "./components/Himejijo";
-import Footer from "./components/Footer";
-import Variables from "./components/Variables";
+import TopPage from './components/TopPage';
+import Himejijo from './components/Himejijo';
+import Footer from './components/Footer';
+import Variables from './components/Variables';
 
 const AdditionalResetStyle = createGlobalStyle`
   * {
@@ -41,5 +41,5 @@ ReactDOM.render(
       <Footer />
     </MainContents>
   </>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
