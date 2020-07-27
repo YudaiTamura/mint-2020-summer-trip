@@ -9,12 +9,13 @@ import Himejijo from './components/Himejijo';
 import Footer from './components/Footer';
 import Variables from './components/Variables';
 
-const AdditionalResetStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     border: none;
+    font-family: serif;
   }
   button:focus {
     outline:0;
@@ -30,7 +31,7 @@ const MainContents = styled.main`
 ReactDOM.render(
   <>
     <Reset />
-    <AdditionalResetStyle />
+    <GlobalStyle />
     <MainContents>
       <BrowserRouter>
         <Switch>
