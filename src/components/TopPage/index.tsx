@@ -24,6 +24,12 @@ import {
   StyledLink,
   EventTime,
   EventTitle,
+  AccommodationContainer,
+  AccommodationInfo,
+  AccommodationTitle,
+  AccommodationPostalCode,
+  AccommodationAddress,
+  GoogleMapLink,
 } from './style';
 
 const TopPage: React.FC = () => {
@@ -56,7 +62,7 @@ const TopPage: React.FC = () => {
   };
 
   return (
-    <section className="top-page">
+    <>
       <KeyVisualContainer>
         <Slider {...slickSetting}>
           {keyVisualImgs.map((img, index) => (
@@ -88,7 +94,17 @@ const TopPage: React.FC = () => {
           ))}
         </ScheduleEvents>
       </ScheduleContainer>
-    </section>
+      <AccommodationContainer>
+        <AccommodationInfo>
+          <AccommodationTitle>宿泊先</AccommodationTitle>
+          <AccommodationPostalCode>〒650-0011</AccommodationPostalCode>
+          <AccommodationAddress>兵庫県神戸市中央区下山手通１丁目２−１</AccommodationAddress>
+          <GoogleMapLink href="https://goo.gl/maps/L3D7WZE3oWXK4Rui9" target="_blank">
+            Google Mapsで開く
+          </GoogleMapLink>
+        </AccommodationInfo>
+      </AccommodationContainer>
+    </>
   );
 };
 
