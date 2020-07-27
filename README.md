@@ -41,7 +41,3 @@ $ npm start
 - デプロイには firebase hosting を利用しています。
 - firebase functions で basic 認証してます。
 - master にマージされると GitHub Actions が動いて自動的にデプロイされます。
-
-## 留意
-
-- 無料で利用できる firebase functions の Node のバージョンが 8.x であり、サポートが終了している。2021/03/15 以降は実行もできなくなるらしい。有料版にアップグレードすれば 10.x が利用できるが、しおりに関しては無料枠内でやりたいので、warning が出るが、気にしないことにする。
