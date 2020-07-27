@@ -17,6 +17,7 @@ $ git flow feature start <ブランチ名>
 ## 開発
 
 - 基本は **React + TypeScript** で開発します。状態管理は React Hooks の機能を使用。
+- SPA だと初期ロードが重くなってきたので GatsbyJS を導入予定
 - スタイルは styled-component を使用。
 - しおりのデザインは描き起こしていません。頭で考えたものを直接コーディングしてます。(Figma を使いたい気持ちはあった)
 - 画像サイズは iPhone XR の解像度である 828x1792 を基準とする。
