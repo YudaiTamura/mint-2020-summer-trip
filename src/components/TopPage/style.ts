@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Variables from '../Variables';
 
-export const KeyVisualContainer = styled.div`
+export const KeyVisualContainer = styled.section`
   width: 100vw;
   height: 100vh;
   &::after {
@@ -23,7 +23,7 @@ export const KeyVisual = styled.img`
   object-fit: cover;
 `;
 
-export const ScheduleContainer = styled.div`
+export const ScheduleContainer = styled.section`
   background-color: ${Variables.COLOR.BIEGE};
   padding: 0 5%;
   display: grid;
@@ -104,4 +104,47 @@ export const EventTitle = styled.h3`
   height: 2rem;
   font-size: 1.4rem;
   font-family: serif;
+`;
+
+export const AccommodationContainer = styled.section`
+  background-color: ${Variables.COLOR.BASE};
+  padding: 4rem 0;
+`;
+
+export const AccommodationInfo = styled.div`
+  width: 90%;
+  margin: 0 auto;
+`;
+
+export const AccommodationTitle = styled.h2`
+  font-size: 2rem;
+  font-family: serif;
+  color: ${Variables.COLOR.DARK_BROWN};
+  margin-bottom: 1rem;
+`;
+
+export const AccommodationPostalCode = styled.p`
+  font-family: serif;
+  line-height: 1.6;
+`;
+
+export const AccommodationAddress = styled.p`
+  font-family: serif;
+  line-height: 1.6;
+`;
+
+export const GoogleMapContainer = styled.div`
+  width: 100%;
+  height: 300px;
+`;
+
+export const GoogleMapLink = styled.a`
+  display: block;
+  margin: 2rem auto 0;
+  background-color: ${Variables.COLOR.BROWN};
+  color: ${Variables.COLOR.BASE};
+  width: fit-content;
+  padding: 1.6rem;
+  border-radius: 3rem;
+  font-size: 1.2rem;
 `;
