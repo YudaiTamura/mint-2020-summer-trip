@@ -16,12 +16,14 @@ $ git flow feature start <ブランチ名>
 
 ## 開発
 
-- 基本は **React + TypeScript** で開発します。状態管理は React Hooks の機能を使用。
-- SPA だと初期ロードが重くなってきたので GatsbyJS を導入予定
-- スタイルは styled-component を使用。
-- しおりのデザインは描き起こしていません。頭で考えたものを直接コーディングしてます。(Figma を使いたい気持ちはあった)
-- 画像サイズは iPhone XR の解像度である 828x1792 を基準とする。
-- スマホでの閲覧のみを想定する。暇があればレスポンシブ化する。
+- 基本は React + TypeScript で開発
+- 状態管理は React Hooks の機能を使用
+- スタイルは styled-component を使用
+- フレームワークに GatsbyJS を採用予定
+- コンテンツ管理には Contentful を予定
+- しおりのデザインは描き起さず、直接コーディングする(Figma を使いたい気持ちはあった)
+- スマホでの閲覧のみを想定
+- 暇があればレスポンシブ化
 
 ### 開発環境構築方法
 
@@ -35,9 +37,10 @@ $ npm install
 $ npm start
 ```
 
-## デプロイ環境
+## デプロイ
 
 - デプロイ先 [https://mint-2020-summer-trip.web.app/]
-- デプロイには firebase hosting を利用しています。
-- firebase functions で basic 認証してます。
-- master にマージされると GitHub Actions が動いて自動的にデプロイされます。
+- デプロイには firebase hosting を利用
+- firebase functions で basic 認証
+- CI には GitHub Actions を採用
+- Contentful のコンテンツ更新をトリガーに GitHub Actions でのデプロイができるようにしたい
