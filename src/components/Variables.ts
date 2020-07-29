@@ -11,9 +11,12 @@ const COLOR = {
   WHITE: '#FFFFFF',
 };
 
+const HEADER_HEIGHT = '48px';
+
 const FOOTER_HEIGHT = '40px';
 
 export default {
   COLOR,
+  HEADER_HEIGHT,
   FOOTER_HEIGHT,
 };

@@ -3,9 +3,26 @@ import { Link } from 'react-router-dom';
 
 import Variables from '../Variables';
 
+export const Header = styled.header`
+  width: 100vw;
+  height: ${Variables.HEADER_HEIGHT};
+  background-color: ${Variables.COLOR.OLIVE};
+`;
+
+export const HeaderTitle = styled.h1`
+  color: ${Variables.COLOR.BASE};
+  width: 100%;
+  height: 100%;
+  line-height: ${Variables.HEADER_HEIGHT};
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 0.1rem;
+`;
+
 export const KeyVisualContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - ${Variables.HEADER_HEIGHT});
+  position: relative;
   &::after {
     content: '';
     width: 100%;
@@ -19,7 +36,7 @@ export const KeyVisualContainer = styled.section`
 
 export const KeyVisual = styled.img`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - ${Variables.HEADER_HEIGHT});
   object-fit: cover;
 `;
 
