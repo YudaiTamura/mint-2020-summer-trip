@@ -5,15 +5,14 @@ import LazyLoad from 'react-lazyload';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import himejijoImg from '../../images/himejijo.jpg';
-import arimaImg from '../../images/arima.jpg';
-import merikenparkImg from '../../images/merikenpark.jpg';
+import himejijoImg from '../images/himejijo.jpg';
+import arimaImg from '../images/arima.jpg';
+import merikenparkImg from '../images/merikenpark.jpg';
 
-import Schedules from '../Schedules';
+import Schedules from '../components/Schedules';
+import Layout from '../components/layout';
 
 import {
-  Header,
-  HeaderTitle,
   KeyVisualContainer,
   KeyVisual,
   ScheduleContainer,
@@ -32,9 +31,9 @@ import {
   AccommodationPostalCode,
   AccommodationAddress,
   GoogleMapLink,
-} from './style';
+} from '../components/Index/style';
 
-const TopPage: React.FC = () => {
+const Index: React.FC = () => {
   const slickSetting = {
     fade: true,
     arrows: false,
@@ -64,10 +63,7 @@ const TopPage: React.FC = () => {
   };
 
   return (
-    <>
-      <Header>
-        <HeaderTitle>ミント お盆旅行 2020</HeaderTitle>
-      </Header>
+    <Layout>
       <KeyVisualContainer>
         <Slider {...slickSetting}>
           {keyVisualImgs.map((img, index) => (
@@ -109,8 +105,8 @@ const TopPage: React.FC = () => {
           </GoogleMapLink>
         </AccommodationInfo>
       </AccommodationContainer>
-    </>
+    </Layout>
   );
 };
 
-export default TopPage;
+export default Index;

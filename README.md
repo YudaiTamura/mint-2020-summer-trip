@@ -20,6 +20,7 @@ $ git flow feature start <ブランチ名>
 - 状態管理は React Hooks の機能を使用
 - スタイルは styled-component を使用
 - フレームワークに GatsbyJS を採用予定
+- パッケージマネージャーは GatsbyJS を使う関係上 yarn を採用
 - コンテンツ管理には Contentful を予定
 - しおりのデザインは描き起さず、直接コーディングする(Figma を使いたい気持ちはあった)
 - スマホでの閲覧のみを想定
@@ -33,8 +34,8 @@ $ git clone https://github.com/YudaiTamura/mint-2020-summer-trip.git
 $ git clone git@github.com:YudaiTamura/mint-2020-summer-trip.git
 
 $ cd mint-2020-summer-trip
-$ npm install
-$ npm start
+$ yarn install
+$ yarn start
 ```
 
 ## デプロイ
