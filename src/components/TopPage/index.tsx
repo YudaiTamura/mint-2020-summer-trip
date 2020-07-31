@@ -12,8 +12,6 @@ import merikenparkImg from '../../images/merikenpark.jpg';
 import Schedules from '../Schedules';
 
 import {
-  Header,
-  HeaderTitle,
   KeyVisualContainer,
   KeyVisual,
   ScheduleContainer,
@@ -65,9 +63,6 @@ const TopPage: React.FC = () => {
 
   return (
     <>
-      <Header>
-        <HeaderTitle>ミント お盆旅行 2020</HeaderTitle>
-      </Header>
       <KeyVisualContainer>
         <Slider {...slickSetting}>
           {keyVisualImgs.map((img, index) => (

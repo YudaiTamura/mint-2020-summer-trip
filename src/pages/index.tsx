@@ -5,6 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 import TopPage from '../components/TopPage';
 import Himejijo from '../components/Himejijo';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Variables from '../components/Variables';
 
@@ -33,6 +34,7 @@ const Index: React.FC = () => {
       <Reset />
       <GlobalStyle />
       <MainContents>
+        <Header />
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={TopPage}></Route>
