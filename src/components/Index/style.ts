@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
 import Variables from '../Variables';
 
 export const KeyVisualContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - ${Variables.HEADER_HEIGHT});
+  position: relative;
   &::after {
     content: '';
     width: 100%;
@@ -19,7 +20,7 @@ export const KeyVisualContainer = styled.section`
 
 export const KeyVisual = styled.img`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - ${Variables.HEADER_HEIGHT});
   object-fit: cover;
 `;
 
