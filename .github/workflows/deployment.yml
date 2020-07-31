@@ -19,11 +19,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build
+      - name: npm/yarn install, build
         run: |
           npm install -g firebase-tools
           yarn install
           yarn run build
+          mkdir public
           cd ./functions
           npm install
           cd ..
