@@ -16,13 +16,14 @@ $ git flow feature start <ブランチ名>
 
 ## 開発
 
-- 基本は React + TypeScript で開発
+- 基本は Reactで開発
 - 状態管理は React Hooks の機能を使用
 - スタイルは styled-component を使用
 - フレームワークに GatsbyJS を採用予定
 - パッケージマネージャーは GatsbyJS を使う関係上 yarn を採用
 - コンテンツ管理には Contentful を予定
 - しおりのデザインは描き起さず、直接コーディングする(Figma を使いたい気持ちはあった)
+- 余裕があればTypeScript化
 - スマホでの閲覧のみを想定
 - 暇があればレスポンシブ化
 

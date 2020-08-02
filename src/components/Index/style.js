@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Variables from '../Variables';
 
@@ -18,7 +19,7 @@ export const KeyVisualContainer = styled.section`
   }
 `;
 
-export const KeyVisual = styled.img`
+export const KeyVisual = styled(Img)`
   width: 100%;
   height: calc(100vh - ${Variables.HEADER_HEIGHT});
   object-fit: cover;

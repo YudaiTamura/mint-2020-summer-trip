@@ -25,7 +25,7 @@ const MainContents = styled.main`
   background-color: ${Variables.COLOR.BASE};
 `;
 
-const Layout: React.FC = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Reset />
