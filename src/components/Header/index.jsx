@@ -2,7 +2,7 @@ import React from 'react';
 
 import { HeaderTitle } from './style';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header>
       <HeaderTitle>ミント お盆旅行 2020</HeaderTitle>

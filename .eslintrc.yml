@@ -4,12 +4,11 @@ env:
 extends:
   - 'plugin:react/recommended'
   - google
-  - 'plugin:@typescript-eslint/recommended'
   - prettier
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
-parser: '@typescript-eslint/parser'
+parser: 'babel-eslint'
 parserOptions:
   ecmaFeatures:
     jsx: true
@@ -17,13 +16,10 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-  - '@typescript-eslint'
   - prettier
 rules:
   # 関数の複雑さを 10 以下にする
   complexity: ['error', 10]
-  # React のプロパティの型チェックを省略する (TypeScript でチェックされるため)
-  react/prop-types: off
   # prettier のチェックでErrorとするための設定
   prettier/prettier:
     - error
