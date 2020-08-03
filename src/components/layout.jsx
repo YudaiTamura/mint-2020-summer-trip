@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const MainContents = styled.main`
-  min-height: calc(100vh - ${Variables.FOOTER_HEIGHT});
+  min-height: calc(100vh - ${Variables.HEADER_HEIGHT} - ${Variables.FOOTER_HEIGHT});
   width: 100vw;
   background-color: ${Variables.COLOR.BASE};
 `;
@@ -30,11 +30,12 @@ const Layout = ({ children }) => {
     <>
       <Reset />
       <GlobalStyle />
+      <Header />
       <MainContents>
-        <Header />
         {children}
-        <Footer />
       </MainContents>
+      <Footer />
+
     </>
   );
 };
