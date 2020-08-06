@@ -15,5 +15,15 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `ミントお盆旅行2020 しおり`,
+        short_name: `旅行 しおり`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        icon: `${__dirname}/src/images/favicon.png`,
+      },
+    },
   ],
 };
