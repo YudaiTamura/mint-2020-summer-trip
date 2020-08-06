@@ -21,8 +21,8 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query {
-    contentfulSchedule {
+  query($id: String!) {
+    contentfulSchedule(id: { eq: $id }) {
       slug
       title
       contents {
