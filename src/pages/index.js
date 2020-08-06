@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import SEO from '../components/seo';
 import Schedules from '../components/Schedules';
 import Layout from '../components/layout';
 
@@ -58,6 +59,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
+      <SEO />
       <KeyVisualContainer>
         <Slider {...slickSetting}>
           <KeyVisual fluid={data.himejijo.childImageSharp.fluid} alt="姫路城" />

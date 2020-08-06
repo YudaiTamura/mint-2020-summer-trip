@@ -31,11 +31,8 @@ const Layout = ({ children }) => {
       <Reset />
       <GlobalStyle />
       <Header />
-      <MainContents>
-        {children}
-      </MainContents>
+      <MainContents>{children}</MainContents>
       <Footer />
-
     </>
   );
 };
