@@ -27,12 +27,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   scheduleResult.data.allContentfulSchedule.edges.forEach(({ node }) => {
-    createPage({
-      path: `/schedule/${node.slug}/`,
-      component: path.resolve(__dirname, `src/templates/schedule-template.js`),
-      context: {
-        id: node.id,
-      },
-    });
+    if (node.slug) {
+      createPage({
+        path: `/schedule/${node.slug}/`,
+        component: path.resolve(__dirname, `src/templates/schedule-template.js`),
+        context: {
+          id: node.id,
+        },
+      });
+    }
   });
 };

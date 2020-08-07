@@ -87,11 +87,22 @@ export const ScheduleEvent = styled.li`
   box-sizing: border-box;
 `;
 
+export const ScheduleEventNoLink = styled(ScheduleEvent)`
+  background-color: ${Variables.COLOR.BIEGE};
+`;
+
 export const StyledLink = styled(Link)`
   display: block;
   width: 100%;
   height: 100%;
   color: ${Variables.COLOR.WHITE};
+`;
+
+export const StyledItem = styled.div`
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: ${Variables.COLOR.DARK_BROWN};
 `;
 
 export const EventTime = styled.time`
