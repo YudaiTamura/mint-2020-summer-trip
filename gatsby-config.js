@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 module.exports = {
   siteMetadata: {
     title: `ミントお盆旅行2020`,
@@ -23,6 +26,14 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         icon: `${__dirname}/src/images/favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST,
       },
     },
   ],

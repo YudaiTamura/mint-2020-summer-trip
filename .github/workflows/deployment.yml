@@ -23,11 +23,19 @@ jobs:
         run: |
           npm install -g firebase-tools
           yarn install
+          touch .env
+          echo $CONTENTFUL_SPACE_ID >> .env
+          echo $CONTENTFUL_ACCESS_TOKEN >> .env
+          echo $CONTENTFUL_HOST >> .env
           yarn run build
           mkdir public
           cd ./functions
           npm install
           cd ..
+        env:
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          CONTENTFUL_HOST: ${{ secrets.CONTENTFUL_HOST }}
       - name: deploy to Firebase Hosting
         run: |
           firebase deploy --token $FIREBASE_TOKEN
