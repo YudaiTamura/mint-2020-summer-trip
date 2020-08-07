@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FooterItem } from './style';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer>
       <FooterItem>©︎ Yudai Tamura FROM MINT</FooterItem>

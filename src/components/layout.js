@@ -20,21 +20,19 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const MainContents = styled.main`
-  min-height: calc(100vh - ${Variables.FOOTER_HEIGHT});
+  min-height: calc(100vh - ${Variables.HEADER_HEIGHT} - ${Variables.FOOTER_HEIGHT});
   width: 100vw;
   background-color: ${Variables.COLOR.BASE};
 `;
 
-const Layout: React.FC = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Reset />
       <GlobalStyle />
-      <MainContents>
-        <Header />
-        {children}
-        <Footer />
-      </MainContents>
+      <Header />
+      <MainContents>{children}</MainContents>
+      <Footer />
     </>
   );
 };

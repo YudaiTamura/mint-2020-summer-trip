@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
+import { graphql } from 'gatsby';
 import Slider from 'react-slick';
-import LazyLoad from 'react-lazyload';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import himejijoImg from '../images/himejijo.jpg';
-import arimaImg from '../images/arima.jpg';
-import merikenparkImg from '../images/merikenpark.jpg';
-
+import SEO from '../components/seo';
 import Schedules from '../components/Schedules';
 import Layout from '../components/layout';
 
@@ -33,7 +30,7 @@ import {
   GoogleMapLink,
 } from '../components/Index/style';
 
-const Index: React.FC = () => {
+const Index = ({ data }) => {
   const slickSetting = {
     fade: true,
     arrows: false,
@@ -44,8 +41,6 @@ const Index: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
-  const keyVisualImgs = [himejijoImg, arimaImg, merikenparkImg];
 
   const [selectedDay, setSelectedDay] = useState('day1');
   const [schedule, setSchedule] = useState(Schedules.day1Schedule);
@@ -64,13 +59,12 @@ const Index: React.FC = () => {
 
   return (
     <Layout>
+      <SEO />
       <KeyVisualContainer>
         <Slider {...slickSetting}>
-          {keyVisualImgs.map((img, index) => (
-            <LazyLoad height={200} key={index}>
-              <KeyVisual src={img} />
-            </LazyLoad>
-          ))}
+          <KeyVisual fluid={data.himejijo.childImageSharp.fluid} alt="姫路城" />
+          <KeyVisual fluid={data.arima.childImageSharp.fluid} alt="有馬温泉" />
+          <KeyVisual fluid={data.merikenpark.childImageSharp.fluid} alt="メリケンパーク" />
         </Slider>
       </KeyVisualContainer>
       <ScheduleContainer>
@@ -85,7 +79,7 @@ const Index: React.FC = () => {
           ３日目
         </Day3Button>
         <ScheduleEvents>
-          {schedule.map((event: { time: string; name: string; link: string }, index: number) => (
+          {schedule.map((event, index) => (
             <ScheduleEvent key={index}>
               <StyledLink to={event.link}>
                 <EventTime>{event.time}</EventTime>
@@ -108,5 +102,31 @@ const Index: React.FC = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query IndexImage {
+    himejijo: file(relativePath: { eq: "himejijo.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    arima: file(relativePath: { eq: "arima.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    merikenpark: file(relativePath: { eq: "merikenpark.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
 
 export default Index;
