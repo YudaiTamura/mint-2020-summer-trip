@@ -18,7 +18,9 @@ import {
   Day3Button,
   ScheduleEvents,
   ScheduleEvent,
+  ScheduleEventNoLink,
   StyledLink,
+  StyledItem,
   EventTime,
   EventTitle,
   AccommodationContainer,
@@ -108,14 +110,27 @@ const Index = ({ data }) => {
           ３日目
         </Day3Button>
         <ScheduleEvents>
-          {schedule.map((event, index) => (
-            <ScheduleEvent key={index}>
-              <StyledLink to={`/schedule/${event.link}`}>
-                <EventTime>{event.time}</EventTime>
-                <EventTitle>{event.title}</EventTitle>
-              </StyledLink>
-            </ScheduleEvent>
-          ))}
+          {schedule.map((event, index) => {
+            if (event.link) {
+              return (
+                <ScheduleEvent key={index}>
+                  <StyledLink to={`/schedule/${event.link}`}>
+                    <EventTime>{event.time}</EventTime>
+                    <EventTitle>{event.title}</EventTitle>
+                  </StyledLink>
+                </ScheduleEvent>
+              );
+            } else {
+              return (
+                <ScheduleEventNoLink key={index}>
+                  <StyledItem>
+                    <EventTime>{event.time}</EventTime>
+                    <EventTitle>{event.title}</EventTitle>
+                  </StyledItem>
+                </ScheduleEventNoLink>
+              );
+            }
+          })}
         </ScheduleEvents>
       </ScheduleContainer>
       <AccommodationContainer>
